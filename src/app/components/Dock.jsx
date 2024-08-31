@@ -8,12 +8,12 @@ import {
     IconMail as IconContact,
 } from "@tabler/icons-react";
 
-export function FloatingDockDemo() {  // Named export
+export function FloatingDockDemo() {
     const links = [
-        { title: "Home", icon: <IconHome />, href: "/" },
-        { title: "Projects", icon: <IconCode />, href: "#" },
-        { title: "About", icon: <IconUser />, href: "#" },
-        { title: "Contact", icon: <IconContact />, href: "#" },
+        { title: "Home", icon: <IconHome />, href: "#home" },
+        { title: "About", icon: <IconUser />, href: "#about" },
+        { title: "Projects", icon: <IconCode />, href: "#projects" },
+        { title: "Contact", icon: <IconContact />, href: "#contact" },
     ];
 
     return (

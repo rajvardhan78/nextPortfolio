@@ -4,21 +4,11 @@ export function ScrollBasedVelocityDemo() {
   return (
     <div className="relative overflow-hidden">
       <VelocityScroll
-        text="Python | Django | Flask | SQLite | MongoDB"
+        text="RAJVARDHAN SHINDE"
         default_velocity={4}
-        className="container font-display text-center text-4xl font-bold tracking-[-0.02em] text-custom-orange drop-shadow-sm dark:text-custom-orange md:text-7xl md:leading-[5rem] fade-effect"
+        style={{ marginTop: "-200px" }}
+        className="font-display text-center text-4xl font-normal tracking-[-0.02em] text-white drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem] fade-effect"
       />
-      <style jsx>{`
-        .fade-effect {
-          mask-image: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0),
-            rgba(255, 255, 255, 1) 20%,
-            rgba(255, 255, 255, 1) 80%,
-            rgba(255, 255, 255, 0)
-          );
-        }
-      `}</style>
     </div>
   );
 }
