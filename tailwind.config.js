@@ -18,6 +18,9 @@ module.exports = {
       },
     },
     extend: {
+      zIndex: {
+        '-10': '-10', // Add a custom negative z-index value
+      },
       colors: {
         'custom-orange': '#FF8343',
         border: "hsl(var(--border))",
