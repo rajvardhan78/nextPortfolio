@@ -15,10 +15,9 @@ const HeroSection = () => {
   }, []);
 
   const words = ["Developer", "Designer", "Creator"];
-  const colors = ["#ffa333", "#87CEEB", "#cc66ff"];
-
-
+  const colors = ["#ffa333", "#3bb0de", "#cc66ff"];
   const duration = 2000;
+
 
   if (!isClient) {
     return null;
@@ -26,26 +25,26 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="flex flex-col justify-center items-center min-h-screen p-10" style={{ marginTop: "-100px" }}>
-        <div className="">
-        <h1 className="text text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white dark:text-white">
-          Hi👋 I'm
-        </h1>
-        <HyperText
-          className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white dark:text-white"
-          text="Rajvardhan"
-        />
-        <div className="flex justify-center items-center mb-9">
-          <FlipWords
-            words={words}
-            duration={duration}
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold"
-            style={{ color: colors.join(', ') }}  // Joining colors for CSS custom properties
-            colors={colors}
+      <section className="relative flex flex-col justify-center items-center min-h-screen p-10" style={{ marginTop: "-100px" }}>
+        <div className="relative z-20">
+          <h1 className="text text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white dark:text-white">
+            Hi👋 I'm
+          </h1>
+          <HyperText
+            className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white dark:text-white"
+            text="Rajvardhan"
           />
+          <div className="flex justify-center items-center mb-9">
+            <FlipWords
+              words={words}
+              duration={duration}
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold"
+              style={{ color: colors.join(', ') }}  // Joining colors for CSS custom properties
+              colors={colors}
+            />
+          </div>
         </div>
-        </div>
-        <FloatingDockDemo className="my-3"/> {/* Fixed position at the top */}
+        <FloatingDockDemo className="relative z-30 my-3"/> {/* Ensure FloatingDockDemo is on top */}
       </section>
     </>
   );

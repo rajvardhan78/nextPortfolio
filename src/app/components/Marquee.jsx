@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Marquee from "@/components/magicui/marquee";
+import {Marquee} from "@/components/magicui/marquee";
 
 const text = "This is a sample string that will be running in the marquee.";
 
@@ -19,7 +19,7 @@ const ReviewCard = ({ text }) => {
   );
 };
 
-export function MarqueeDemo() {
+export function Marquee() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl">
       <Marquee pauseOnHover className="[--duration:20s]">
