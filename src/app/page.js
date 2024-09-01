@@ -14,10 +14,10 @@ export default function Home() {
       </div>
       <main className="relative z-10 flex min-h-screen flex-col bg-transparent">
         <div className="container mt-24 mx-auto px-12 py-4">
-          <HeroSection id="home" />
-          <AboutSection id="about" />
-          <ProjectsSection id="projects" />
-          <EmailSection id="contact" />
+          <HeroSection id="Home" />
+          <AboutSection id="About" />
+          <ProjectsSection id="Projects" />
+          <EmailSection id="Contact" />
         </div>
         <Footer />
       </main>
