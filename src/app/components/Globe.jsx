@@ -2,12 +2,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
+// Dynamically import the Globe component
 const World = dynamic(() => import("@/components/ui/globe.jsx").then((m) => m.World), {
   ssr: false,
 });
 
 export function GlobeDemo() {
+
+  // Globe configuration
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
@@ -30,6 +34,7 @@ export function GlobeDemo() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
+
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
   const sampleArcs = [
     {
@@ -396,7 +401,7 @@ export function GlobeDemo() {
 
   return (
     <div className="w-full h-screen bg-transparent">
-      <World data={sampleArcs} globeConfig={globeConfig} />
+          <World data={sampleArcs} globeConfig={globeConfig} />
     </div>
-  );  
+  );
 }

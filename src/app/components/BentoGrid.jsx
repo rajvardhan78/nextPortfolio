@@ -1,38 +1,34 @@
-import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { AnimatedBeamDemo } from "./AnimBeam";
-
+import { CardStackDemo } from "./CardStack";
+import { MarqueeDemoVertical } from "./Marquee";
+import { GlobeDemo } from "./Globe";
 
 const features = [
   {
-    Icon: FileTextIcon,
-    name: "Tech Stack",
-    description: "The techs that I work with.",
+    name: " ",
+    description: " ",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
-       <></>
+       <MarqueeDemoVertical/>
     ),
   },
   {
-    Icon: BellIcon,
-    name: "Notifications",
-    description: "Get notified when something happens.",
+    name: " ",
+    description: " ",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-    <></>
+      <CardStackDemo className="absolute inset-0 z-0  flex items-center justify-center"/>
     ),
   },
   {
-    Icon: Share2Icon,
-    name: "Integrations",
-    description: "Developed cool integrations and counting.",
+    name: " ",
+    description: " ",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
@@ -41,16 +37,18 @@ const features = [
     ),
   },
   {
-    Icon: CalendarIcon,
-    name: "Certificactions",
-    description: "I am trained by the best.",
+    
+    name: " ",
+    description: " ",
     className: "col-span-3 lg:col-span-1",
     href: "#",
     cta: "Learn more",
     background: (
-    <></>
+      <GlobeDemo
+        className="absolute inset-0 z-0 h-24 w-24 items-center justify-center" // Adjusted size
+      />
     ),
-  },
+  }  
 ];
 
 export function BentoDemo() {

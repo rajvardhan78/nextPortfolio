@@ -1,29 +1,101 @@
 import { cn } from "@/lib/utils";
-import {Marquee} from "@/components/magicui/marquee";
+import Marquee from "@/components/magicui/marquee";
 
-const text = "This is a sample string that will be running in the marquee.";
+const techStack = [
+  {
+    name: " ",
+    img: "/images/python.png",
+  },
+  {
+    name: " ",
+    img: "/images/azure.png",
+  },
+  {
+    name: " ",
+    img: "/images/Django.png",
+  },
+  {
+    name: " ",
+    img: "/images/DjangoREST.png",
+  },
+  {
+    name: " ",
+    img: "/images/Flask.png",
+  },
+  {
+    name: " ",
+    img: "/images/Git.png",
+  },
+  {
+    name: " ",
+    img: "/images/Github.png",
+  },
+  {
+    name: " ",
+    img: "/images/Keras.png",
+  },
+  {
+    name: " ",
+    img: "/images/MongoDB.png",
+  },
+  {
+    name: " ",
+    img: "/images/Numpy.png",
+  },
+  {
+    name: " ",
+    img: "/images/OpenCV.png",
+  },
+  {
+    name: " ",
+    img: "/images/Pandas.png",
+  },
+  {
+    name: " ",
+    img: "/images/Scikit-Learn.png",
+  },
+  {
+    name: " ",
+    img: "/images/TensorFlow.png",
+  },
+  {
+    name: " ",
+    img: "/images/SQLite.png",
+  },
+  // Add more logos as needed
+];
 
-const ReviewCard = ({ text }) => {
+const TechStackCard = ({ img, name }) => {
   return (
     <figure
       className={cn(
-        "relative w-64 cursor-pointer text-white overflow-hidden rounded-xl border p-4",
-        // light styles
-        "border-white-950/[.1] bg-white-950/[.01] hover:bg-white-950/[.05]",
-        // dark styles
-        "dark:border-white-50/[.1] dark:bg-white-50/[.10] dark:hover:bg-white-50/[.15]",
+        "relative h-40 w-36 cursor-pointer overflow-hidden rounded-xl border p-4",
+        // Transparent frosted glass effect
+        "bg-white/30 backdrop-blur-md",
+        "dark:bg-black/30 dark:border-gray-700 dark:shadow-lg",
       )}
     >
-      <blockquote className="text-sm">{text}</blockquote>
+      <div className="flex items-center justify-center h-full">
+        <img 
+          className="h-16 w-16 object-contain" // Set a fixed size for the icons
+          alt={name} 
+          src={img} 
+        />
+      </div>
+      <figcaption className="mt-2 text-center text-sm font-medium dark:text-white">
+        {name}
+      </figcaption>
     </figure>
   );
 };
 
-export function Marquee() {
+export function MarqueeDemoVertical() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        <ReviewCard text={text} />
+    <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden rounded-lg border bg-transparent md:shadow-xl">
+      <Marquee pauseOnHover vertical className="[--duration:20s]">
+        {techStack.map((tech) => (
+          <TechStackCard key={tech.name} {...tech} />
+        ))}
       </Marquee>
     </div>
   );
