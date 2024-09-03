@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer border z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white">
       <div className="container p-12 flex justify-between">
-        <p className="text-white">Made with Passion by Rajvardhan | &copy; {new Date().getFullYear()}</p>
+        <p className="text-white">Made with passion by Rajvardhan | &copy; {new Date().getFullYear()}</p>
       </div>
     </footer>
   );

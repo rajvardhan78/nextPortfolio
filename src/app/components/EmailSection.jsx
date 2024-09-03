@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
@@ -8,35 +9,22 @@ import Button from "./msgBtn";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const form = useRef();
 
-  const handleSubmit = async (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/src/app/api/send.js"; // Updated endpoint to match your API route
-
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
 
     try {
-      const response = await fetch(endpoint, options);
-      if (response.ok) {
-        console.log("Message sent.");
-        setEmailSubmitted(true);
-      } else {
-        console.error("Failed to send message.");
-      }
+      await emailjs.sendForm(
+        "service_1ng0u78",
+        "template_ifyqu1n",
+        form.current,
+        "w926c_8QuJSmbMr49"
+      );
+      console.log("Message sent.");
+      setEmailSubmitted(true);
     } catch (error) {
-      console.error("Error sending message:", error);
+      console.error("Failed to send message.", error.text);
     }
   };
 
@@ -59,68 +47,71 @@ const EmailSection = () => {
           <Link href="https://github.com/rajvardhan78" target="_blank">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="https://www.linkedin.com/in/rajvardhanshinde/" target="_blank">
+          <Link
+            href="https://www.linkedin.com/in/rajvardhanshinde/"
+            target="_blank"
+          >
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
       </div>
       <div>
-        {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
-            Email sent successfully!
-          </p>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-xl font-medium"
-              >
-                Your email
-              </label>
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="bg-[rgba(24,25,30,0.7)] backdrop-filter backdrop-blur-md border border-[#ffd199] placeholder-[#ffd199] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="johndoe@gmail.com"
-              />
+        <form ref={form} className="flex flex-col" onSubmit={sendEmail}>
+          <div className="mb-6">
+            <label
+              htmlFor="email"
+              className="text-white block mb-2 text-xl font-medium"
+            >
+              Your email
+            </label>
+            <input
+              name="user_email"
+              type="email"
+              id="email"
+              required
+              className="bg-[rgba(24,25,30,0.7)] backdrop-filter backdrop-blur-md border border-[#ffd199] placeholder-[#ffd199] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="johndoe@gmail.com"
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="subject"
+              className="text-white block text-xl mb-2 font-medium"
+            >
+              Subject
+            </label>
+            <input
+              name="subject"
+              type="text"
+              id="subject"
+              required
+              className="bg-[rgba(24,25,30,0.7)] backdrop-filter backdrop-blur-md border border-[#99d6f2] placeholder-[#99d6f2] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Just saying hi"
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="message"
+              className="text-white block text-xl mb-2 font-medium"
+            >
+              Message
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              required
+              className="bg-[rgba(24,25,30,0.7)] backdrop-filter backdrop-blur-md border border-[#e0b3ff] placeholder-[#e0b3ff] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Let's talk about..."
+            />
+          </div>
+          {emailSubmitted ? (
+            <div className="bg-green-600 bg-opacity-50 backdrop-filter backdrop-blur-lg text-white text-center py-4 rounded-lg">
+              Email sent successfully!
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block text-xl mb-2 font-medium"
-              >
-                Subject
-              </label>
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="bg-[rgba(24,25,30,0.7)] backdrop-filter backdrop-blur-md border border-[#99d6f2] placeholder-[#99d6f2] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-xl mb-2 font-medium"
-              >
-                Message
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                required
-                className="bg-[rgba(24,25,30,0.7)] backdrop-filter backdrop-blur-md border border-[#e0b3ff] placeholder-[#e0b3ff] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
-              />
-            </div>
-            <Button type="submit"/>
-          </form>
-        )}
+          ) : (
+            <Button type="submit" />
+          )}
+        </form>
       </div>
     </section>
   );

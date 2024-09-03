@@ -28,9 +28,9 @@ export const Highlight = ({ children, className }) => {
 const CARDS = [
   {
     id: 0,
-    name: <img src="/images/Udemy.png" alt=" " className="h-10" />, // Udemy logo
+    name: <img src="/images/Udemy.png" alt="Udemy logo" className="h-10 hidden sm:block" />,
     content: (
-      <p className="text-4x1">
+      <p className="text-lg sm:text-base md:text-sm lg:text-xs xl:text-lg">
         I completed <Highlight>The Complete Python Developer</Highlight> course.
         It was an <Highlight>amazing learning experience</Highlight> that deepened
         my understanding of Python.
@@ -39,9 +39,9 @@ const CARDS = [
   },
   {
     id: 1,
-    name: <img src="/images/Google.png" alt=" " className="h-10" />, // Google logo
+    name: <img src="/images/Google.png" alt="Google logo" className="h-10 hidden sm:block" />,
     content: (
-      <p className="text-4x1">
+      <p className="text-lg sm:text-base md:text-sm lg:text-xs xl:text-lg">
         The <Highlight>Google Professional UX Design</Highlight> certification
         on Coursera taught me <Highlight>essential UX principles</Highlight> and
         techniques to create intuitive user experiences.
@@ -50,9 +50,9 @@ const CARDS = [
   },
   {
     id: 2,
-    name: <img src="/images/Udemy.png" alt=" " className="h-10" />, // Udemy logo
+    name: <img src="/images/Udemy.png" alt="Udemy logo" className="h-10 hidden sm:block" />,
     content: (
-      <p className="text-4x1">
+      <p className="text-lg sm:text-base md:text-sm lg:text-xs xl:text-lg">
         Currently, I'm enrolled in{" "}
         <Highlight>
           Machine Learning, AI, NLP, Deep Learning A-Z
@@ -63,3 +63,6 @@ const CARDS = [
     ),
   },
 ];
+
+
+
