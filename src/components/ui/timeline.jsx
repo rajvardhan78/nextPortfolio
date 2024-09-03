@@ -35,7 +35,7 @@ export const Timeline = ({ data }) => {
           My journey through the Landscape of Techs
         </h2>
         <p className="text-white dark:text-white text-sm md:text-base max-w-sm">
-          I've been mastering Python for the past 6 months. Here's a timeline of my growth.
+          I&apos;ve been mastering Python for the past 6 months. Here&apos;s a timeline of my growth.
         </p>
       </div>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">

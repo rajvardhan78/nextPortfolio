@@ -53,7 +53,7 @@ const CARDS = [
     name: <img src="/images/Udemy.png" alt="Udemy logo" className="h-10 hidden sm:block" />,
     content: (
       <p className="text-lg sm:text-base md:text-sm lg:text-xs xl:text-lg">
-        Currently, I'm enrolled in{" "}
+        Currently, I&apos;m enrolled in{" "}
         <Highlight>
           Machine Learning, AI, NLP, Deep Learning A-Z
         </Highlight>
