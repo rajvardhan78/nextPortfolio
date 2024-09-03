@@ -28,7 +28,7 @@ const HeroSection = () => {
       <section className="relative flex flex-col justify-center items-center min-h-screen p-10" style={{ marginTop: "-100px" }}>
         <div className="relative z-20">
           <h1 className="text text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white dark:text-white">
-            Hi👋 I'm
+            Hi👋 I&apos;m
           </h1>
           <HyperText
             className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white dark:text-white"
