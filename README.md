@@ -1,7 +1,7 @@
 
 # Personal Portfolio
 
-Check it out at `https://rajvardhanshinde.vercel.app/` 
+Check it out at https://rajvardhanshinde.vercel.app/ 
 
 
 ## Badges
